@@ -83,6 +83,7 @@ export default function QuizApp() {
         score={getScore(answers)}
         answered={answers.length}
         total={questions.length}
+        answers={answers}
         onRetryWrong={retryWrong}
         onWrongList={() => setScreen("wrongList")}
         onHome={() => setScreen("main")}
