@@ -25,6 +25,11 @@ export type QuizQuestion = {
   wordBank?: string[];
   grammarFocus?: string;
   givenWords?: string[];
+  visualClueEmoji?: string;
+  visualClueAlt?: string;
+  visualClueSource?: string;
+  imagePath?: string;
+  imageAlt?: string;
 };
 
 export type QuizUnit = {
@@ -60,14 +65,15 @@ export const quizBook: QuizBook = {
   "quizTitle": "Andy Weekly Test Maker",
   "bookTitle": "ESL Rainbows Red Vol.2",
   "targetStudent": "Andy",
-  "version": "5.2.0-unit1-12-xlsm-definition-ko-hints",
+  "version": "5.5.0-blank-visual-clues",
   "totalUnits": 12,
   "totalQuestions": 240,
   "sourcePolicy": {
     "match_definitions": 8,
     "fill_blanks": 6,
     "unscramble": 6,
-    "note": "유닛별 교재·단어장 범위를 기준으로 영영정의, 빈칸완성, 문장배열을 모두 4지선다 객관식으로 정리했습니다. 영영정의형은 해설을 표시하지 않습니다."
+    "note": "유닛별 교재·단어장 범위를 기준으로 영영정의, 빈칸완성, 문장배열을 모두 4지선다 객관식으로 정리했습니다. 영영정의형은 해설을 표시하지 않습니다.",
+    "fill_blanks_visual_note": "빈칸완성형은 그림 단서가 필요한 유형이므로, 각 문항에 visualClueEmoji와 visualClueAlt를 추가했습니다. 실제 시험지 그림 파일이 있는 경우 imagePath 필드로 대체할 수 있습니다."
   },
   "studyFocus": [
     "영영정의 핵심어 찾기",
@@ -134,7 +140,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "tub",
           "sourceSheet": "Unit1_Day1-2",
@@ -159,7 +165,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'tub'가 알맞습니다.",
           "koreanMeaning": "욕조",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🛁",
+          "visualClueAlt": "욕조 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U1-Q03",
@@ -232,7 +241,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "The answer is ___.",
           "sourceWord": "no",
           "sourceSheet": "Unit1_Day1-2",
@@ -257,7 +266,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'no'가 알맞습니다.",
           "koreanMeaning": "아니오",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🚫",
+          "visualClueAlt": "금지 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U1-Q06",
@@ -330,7 +342,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "door",
           "sourceSheet": "Unit1_Day1-2",
@@ -355,7 +367,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'door'가 알맞습니다.",
           "koreanMeaning": "문",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🚪",
+          "visualClueAlt": "문 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U1-Q09",
@@ -427,7 +442,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ my dog.",
           "sourceWord": "feed",
           "sourceSheet": "Unit1_Day3-4",
@@ -452,7 +467,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'feed'가 알맞습니다.",
           "koreanMeaning": "먹이를 주다",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🐶🥣",
+          "visualClueAlt": "먹이를 주는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U1-Q12",
@@ -525,7 +543,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I hear the ___.",
           "sourceWord": "news",
           "sourceSheet": "Unit1_Day3-4",
@@ -550,7 +568,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'news'가 알맞습니다.",
           "koreanMeaning": "소식/뉴스",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "📰",
+          "visualClueAlt": "뉴스 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U1-Q15",
@@ -623,7 +644,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "cleaner",
           "sourceSheet": "Unit1_Day3-4",
@@ -648,7 +669,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'cleaner'가 알맞습니다.",
           "koreanMeaning": "청소기/청소하는 사람",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "🧹",
+          "visualClueAlt": "청소기/청소하는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U1-Q18",
@@ -805,7 +829,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I like the ___.",
           "sourceWord": "rain",
           "sourceSheet": "Unit2_Day1-2",
@@ -830,7 +854,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'rain'가 알맞습니다.",
           "koreanMeaning": "비",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🌧️",
+          "visualClueAlt": "비 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U2-Q03",
@@ -902,7 +929,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I play in the ___.",
           "sourceWord": "sand",
           "sourceSheet": "Unit2_Day1-2",
@@ -927,7 +954,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'sand'가 알맞습니다.",
           "koreanMeaning": "모래",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🏖️",
+          "visualClueAlt": "모래 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U2-Q06",
@@ -999,7 +1029,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "leaf",
           "sourceSheet": "Unit2_Day1-2",
@@ -1024,7 +1054,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'leaf'가 알맞습니다.",
           "koreanMeaning": "잎",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🍃",
+          "visualClueAlt": "나뭇잎 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U2-Q09",
@@ -1096,7 +1129,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I have ___ pencils.",
           "sourceWord": "twelve",
           "sourceSheet": "Unit2_Day3-4",
@@ -1121,7 +1154,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'twelve'가 알맞습니다.",
           "koreanMeaning": "열둘",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "1️⃣2️⃣",
+          "visualClueAlt": "숫자 12 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U2-Q12",
@@ -1194,7 +1230,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "It is nine ___.",
           "sourceWord": "o'clock",
           "sourceSheet": "Unit2_Day3-4",
@@ -1219,7 +1255,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'o'clock'가 알맞습니다.",
           "koreanMeaning": "정각",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🕘",
+          "visualClueAlt": "시계 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U2-Q15",
@@ -1292,7 +1331,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I eat ___.",
           "sourceWord": "dinner",
           "sourceSheet": "Unit2_Day3-4",
@@ -1317,7 +1356,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'dinner'가 알맞습니다.",
           "koreanMeaning": "저녁 식사",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "🍽️",
+          "visualClueAlt": "저녁 식사 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U2-Q18",
@@ -1474,7 +1516,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "spider",
           "sourceSheet": "Unit3_Day1-2",
@@ -1499,7 +1541,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'spider'가 알맞습니다.",
           "koreanMeaning": "거미",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🕷️",
+          "visualClueAlt": "거미 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U3-Q03",
@@ -1572,7 +1617,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "It is ___.",
           "sourceWord": "special",
           "sourceSheet": "Unit3_Day1-2",
@@ -1597,7 +1642,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'special'가 알맞습니다.",
           "koreanMeaning": "특별한",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "✨",
+          "visualClueAlt": "특별한 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U3-Q06",
@@ -1670,7 +1718,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "suit",
           "sourceSheet": "Unit3_Day1-2",
@@ -1695,7 +1743,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'suit'가 알맞습니다.",
           "koreanMeaning": "정장/옷 한 벌",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🦸",
+          "visualClueAlt": "정장/슈트 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U3-Q09",
@@ -1767,7 +1818,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I can ___.",
           "sourceWord": "fly",
           "sourceSheet": "Unit3_Day3-4",
@@ -1792,7 +1843,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'fly'가 알맞습니다.",
           "koreanMeaning": "날다",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🦸‍♂️",
+          "visualClueAlt": "나는 모습 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U3-Q12",
@@ -1865,7 +1919,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ the answer.",
           "sourceWord": "know",
           "sourceSheet": "Unit3_Day3-4",
@@ -1890,7 +1944,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'know'가 알맞습니다.",
           "koreanMeaning": "알다",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "💡",
+          "visualClueAlt": "알고 있는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U3-Q15",
@@ -1962,7 +2019,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ the question.",
           "sourceWord": "answer",
           "sourceSheet": "Unit3_Day3-4",
@@ -1987,7 +2044,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'answer'가 알맞습니다.",
           "koreanMeaning": "대답/정답",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "✅",
+          "visualClueAlt": "정답 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U3-Q18",
@@ -2143,7 +2203,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "fireplace",
           "sourceSheet": "Unit4_Day1-2",
@@ -2168,7 +2228,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'fireplace'가 알맞습니다.",
           "koreanMeaning": "벽난로",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🔥",
+          "visualClueAlt": "벽난로 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U4-Q03",
@@ -2242,7 +2305,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "light",
           "sourceSheet": "Unit4_Day1-2",
@@ -2267,7 +2330,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'light'가 알맞습니다.",
           "koreanMeaning": "전등/빛",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "💡",
+          "visualClueAlt": "불빛 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U4-Q06",
@@ -2341,7 +2407,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I get a ___.",
           "sourceWord": "present",
           "sourceSheet": "Unit4_Day1-2",
@@ -2366,7 +2432,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'present'가 알맞습니다.",
           "koreanMeaning": "선물",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🎁",
+          "visualClueAlt": "선물 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U4-Q09",
@@ -2439,7 +2508,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "puppy",
           "sourceSheet": "Unit4_Day3-4",
@@ -2464,7 +2533,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'puppy'가 알맞습니다.",
           "koreanMeaning": "강아지",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🐶",
+          "visualClueAlt": "강아지 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U4-Q12",
@@ -2536,7 +2608,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "rabbit",
           "sourceSheet": "Unit4_Day3-4",
@@ -2561,7 +2633,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'rabbit'가 알맞습니다.",
           "koreanMeaning": "토끼",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🐰",
+          "visualClueAlt": "토끼 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U4-Q15",
@@ -2634,7 +2709,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I feel ___.",
           "sourceWord": "well",
           "sourceSheet": "Unit4_Day3-4",
@@ -2659,7 +2734,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'well'가 알맞습니다.",
           "koreanMeaning": "잘",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "😊",
+          "visualClueAlt": "괜찮은 상태 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U4-Q18",
@@ -2816,7 +2894,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I need ___.",
           "sourceWord": "butter",
           "sourceSheet": "Unit5_Day1-2",
@@ -2841,7 +2919,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'butter'가 알맞습니다.",
           "koreanMeaning": "버터",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🧈",
+          "visualClueAlt": "버터 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U5-Q03",
@@ -2913,7 +2994,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I drink ___.",
           "sourceWord": "milk",
           "sourceSheet": "Unit5_Day1-2",
@@ -2938,7 +3019,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'milk'가 알맞습니다.",
           "koreanMeaning": "우유",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🥛",
+          "visualClueAlt": "우유 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U5-Q06",
@@ -3011,7 +3095,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I need ___.",
           "sourceWord": "sugar",
           "sourceSheet": "Unit5_Day1-2",
@@ -3036,7 +3120,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'sugar'가 알맞습니다.",
           "koreanMeaning": "설탕",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🍬",
+          "visualClueAlt": "설탕 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U5-Q09",
@@ -3109,7 +3196,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "sock",
           "sourceSheet": "Unit5_Day3-4",
@@ -3134,7 +3221,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'sock'가 알맞습니다.",
           "koreanMeaning": "양말",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🧦",
+          "visualClueAlt": "양말 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U5-Q12",
@@ -3207,7 +3297,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "scarf",
           "sourceSheet": "Unit5_Day3-4",
@@ -3232,7 +3322,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'scarf'가 알맞습니다.",
           "koreanMeaning": "목도리",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🧣",
+          "visualClueAlt": "목도리 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U5-Q15",
@@ -3305,7 +3398,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "princess",
           "sourceSheet": "Unit5_Day3-4",
@@ -3330,7 +3423,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'princess'가 알맞습니다.",
           "koreanMeaning": "공주",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "👸",
+          "visualClueAlt": "공주 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U5-Q18",
@@ -3487,7 +3583,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "skirt",
           "sourceSheet": "Unit6_Day1-2",
@@ -3512,7 +3608,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'skirt'가 알맞습니다.",
           "koreanMeaning": "치마",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "👗",
+          "visualClueAlt": "치마 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U6-Q03",
@@ -3585,7 +3684,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "sweater",
           "sourceSheet": "Unit6_Day1-2",
@@ -3610,7 +3709,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'sweater'가 알맞습니다.",
           "koreanMeaning": "스웨터",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🧥",
+          "visualClueAlt": "스웨터 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U6-Q06",
@@ -3683,7 +3785,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "librarian",
           "sourceSheet": "Unit6_Day1-2",
@@ -3708,7 +3810,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'librarian'가 알맞습니다.",
           "koreanMeaning": "사서",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "📚",
+          "visualClueAlt": "사서 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U6-Q09",
@@ -3781,7 +3886,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "vacuum",
           "sourceSheet": "Unit6_Day3-4",
@@ -3806,7 +3911,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'vacuum'가 알맞습니다.",
           "koreanMeaning": "진공청소기",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🧹",
+          "visualClueAlt": "청소기 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U6-Q12",
@@ -3878,7 +3986,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "refrigerator",
           "sourceSheet": "Unit6_Day3-4",
@@ -3903,7 +4011,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'refrigerator'가 알맞습니다.",
           "koreanMeaning": "냉장고",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🧊",
+          "visualClueAlt": "냉장고 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U6-Q15",
@@ -3976,7 +4087,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see an ___.",
           "sourceWord": "air conditioner",
           "sourceSheet": "Unit6_Day3-4",
@@ -4001,7 +4112,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'air conditioner'가 알맞습니다.",
           "koreanMeaning": "에어컨",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "❄️",
+          "visualClueAlt": "에어컨 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U6-Q18",
@@ -4158,7 +4272,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "toy store",
           "sourceSheet": "Unit7_Day1-2",
@@ -4183,7 +4297,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'toy store'가 알맞습니다.",
           "koreanMeaning": "장난감 가게",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🧸🏬",
+          "visualClueAlt": "장난감 가게 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U7-Q03",
@@ -4256,7 +4373,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ at the bus stop.",
           "sourceWord": "stop",
           "sourceSheet": "Unit7_Day1-2",
@@ -4281,7 +4398,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'stop'가 알맞습니다.",
           "koreanMeaning": "정류장",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🛑",
+          "visualClueAlt": "멈춤 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U7-Q06",
@@ -4354,7 +4474,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see an ___.",
           "sourceWord": "ocarina",
           "sourceSheet": "Unit7_Day1-2",
@@ -4379,7 +4499,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'ocarina'가 알맞습니다.",
           "koreanMeaning": "오카리나",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🎵",
+          "visualClueAlt": "악기 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U7-Q09",
@@ -4452,7 +4575,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "It is ___.",
           "sourceWord": "crowded",
           "sourceSheet": "Unit7_Day3-4",
@@ -4477,7 +4600,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'crowded'가 알맞습니다.",
           "koreanMeaning": "붐비는",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "👥",
+          "visualClueAlt": "사람이 많은 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U7-Q12",
@@ -4549,7 +4675,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see ___ birds.",
           "sourceWord": "forty",
           "sourceSheet": "Unit7_Day3-4",
@@ -4574,7 +4700,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'forty'가 알맞습니다.",
           "koreanMeaning": "마흔",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "4️⃣0️⃣",
+          "visualClueAlt": "숫자 40 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U7-Q15",
@@ -4647,7 +4776,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "line",
           "sourceSheet": "Unit7_Day3-4",
@@ -4672,7 +4801,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'line'가 알맞습니다.",
           "koreanMeaning": "줄",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "➖",
+          "visualClueAlt": "줄 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U7-Q18",
@@ -4829,7 +4961,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ the ball.",
           "sourceWord": "bounce",
           "sourceSheet": "Unit8_Day1-2",
@@ -4854,7 +4986,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'bounce'가 알맞습니다.",
           "koreanMeaning": "튀다",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🏀",
+          "visualClueAlt": "튀는 공 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U8-Q03",
@@ -4927,7 +5062,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ the ball.",
           "sourceWord": "hit",
           "sourceSheet": "Unit8_Day1-2",
@@ -4952,7 +5087,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'hit'가 알맞습니다.",
           "koreanMeaning": "치다",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🏌️",
+          "visualClueAlt": "공을 치는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U8-Q06",
@@ -5026,7 +5164,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___.",
           "sourceWord": "run away",
           "sourceSheet": "Unit8_Day1-2",
@@ -5051,7 +5189,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'run away'가 알맞습니다.",
           "koreanMeaning": "도망가다",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🏃‍♂️💨",
+          "visualClueAlt": "도망가는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U8-Q09",
@@ -5124,7 +5265,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "The ball is ___.",
           "sourceWord": "bigger",
           "sourceSheet": "Unit8_Day3-4",
@@ -5149,7 +5290,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'bigger'가 알맞습니다.",
           "koreanMeaning": "더 큰",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🔵",
+          "visualClueAlt": "더 큰 물건 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U8-Q12",
@@ -5222,7 +5366,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "The ball is ___.",
           "sourceWord": "smaller",
           "sourceSheet": "Unit8_Day3-4",
@@ -5247,7 +5391,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'smaller'가 알맞습니다.",
           "koreanMeaning": "더 작은",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🔹",
+          "visualClueAlt": "더 작은 물건 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U8-Q15",
@@ -5319,7 +5466,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see an ___.",
           "sourceWord": "album",
           "sourceSheet": "Unit8_Day3-4",
@@ -5344,7 +5491,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'album'가 알맞습니다.",
           "koreanMeaning": "앨범",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "📒",
+          "visualClueAlt": "앨범 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U8-Q18",
@@ -5501,7 +5651,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "Today is ___.",
           "sourceWord": "Tuesday",
           "sourceSheet": "Unit9_Day1-2",
@@ -5526,7 +5676,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'Tuesday'가 알맞습니다.",
           "koreanMeaning": "화요일",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "📅",
+          "visualClueAlt": "요일 달력 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U9-Q03",
@@ -5598,7 +5751,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "Today is ___.",
           "sourceWord": "Wednesday",
           "sourceSheet": "Unit9_Day1-2",
@@ -5623,7 +5776,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'Wednesday'가 알맞습니다.",
           "koreanMeaning": "수요일",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "📅",
+          "visualClueAlt": "요일 달력 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U9-Q06",
@@ -5695,7 +5851,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "Today is ___.",
           "sourceWord": "Thursday",
           "sourceSheet": "Unit9_Day1-2",
@@ -5720,7 +5876,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'Thursday'가 알맞습니다.",
           "koreanMeaning": "목요일",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "📅",
+          "visualClueAlt": "요일 달력 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U9-Q09",
@@ -5792,7 +5951,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "plastic bottle",
           "sourceSheet": "Unit9_Day3-4",
@@ -5817,7 +5976,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'plastic bottle'가 알맞습니다.",
           "koreanMeaning": "플라스틱 병",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🧴",
+          "visualClueAlt": "플라스틱 병 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U9-Q12",
@@ -5889,7 +6051,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see ___.",
           "sourceWord": "cymbals",
           "sourceSheet": "Unit9_Day3-4",
@@ -5914,7 +6076,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'cymbals'가 알맞습니다.",
           "koreanMeaning": "심벌즈",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🥁",
+          "visualClueAlt": "심벌즈 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U9-Q15",
@@ -5986,7 +6151,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ the pot.",
           "sourceWord": "tap",
           "sourceSheet": "Unit9_Day3-4",
@@ -6011,7 +6176,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'tap'가 알맞습니다.",
           "koreanMeaning": "톡톡 치다",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "👆",
+          "visualClueAlt": "가볍게 두드리는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U9-Q18",
@@ -6168,7 +6336,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "It is ___.",
           "sourceWord": "wrong",
           "sourceSheet": "Unit10_Day1-2",
@@ -6193,7 +6361,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'wrong'가 알맞습니다.",
           "koreanMeaning": "틀린",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "❌",
+          "visualClueAlt": "틀림 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U10-Q03",
@@ -6266,7 +6437,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "gym",
           "sourceSheet": "Unit10_Day1-2",
@@ -6291,7 +6462,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'gym'가 알맞습니다.",
           "koreanMeaning": "체육관",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🏋️",
+          "visualClueAlt": "체육관 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U10-Q06",
@@ -6363,7 +6537,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "garden",
           "sourceSheet": "Unit10_Day1-2",
@@ -6388,7 +6562,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'garden'가 알맞습니다.",
           "koreanMeaning": "정원",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🌷",
+          "visualClueAlt": "정원 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U10-Q09",
@@ -6460,7 +6637,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ the game.",
           "sourceWord": "watch",
           "sourceSheet": "Unit10_Day3-4",
@@ -6485,7 +6662,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'watch'가 알맞습니다.",
           "koreanMeaning": "관찰하다",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "📺",
+          "visualClueAlt": "보다/시계 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U10-Q12",
@@ -6560,7 +6740,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ near the tree.",
           "sourceWord": "stand",
           "sourceSheet": "Unit10_Day3-4",
@@ -6585,7 +6765,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'stand'가 알맞습니다.",
           "koreanMeaning": "서다",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🧍",
+          "visualClueAlt": "서 있는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U10-Q15",
@@ -6657,7 +6840,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "It is ___.",
           "sourceWord": "amazing",
           "sourceSheet": "Unit10_Day3-4",
@@ -6682,7 +6865,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 2,
           "explanationKo": "문맥상 'amazing'가 알맞습니다.",
           "koreanMeaning": "놀라운",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "🤩",
+          "visualClueAlt": "놀란 표정 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U10-Q18",
@@ -6839,7 +7025,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I walk in the ___.",
           "sourceWord": "woods",
           "sourceSheet": "Unit11_Day1-2",
@@ -6864,7 +7050,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'woods'가 알맞습니다.",
           "koreanMeaning": "숲",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "🌲",
+          "visualClueAlt": "숲 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U11-Q03",
@@ -6936,7 +7125,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "campfire",
           "sourceSheet": "Unit11_Day1-2",
@@ -6961,7 +7150,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'campfire'가 알맞습니다.",
           "koreanMeaning": "모닥불",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "🔥",
+          "visualClueAlt": "모닥불 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U11-Q06",
@@ -7035,7 +7227,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "pond",
           "sourceSheet": "Unit11_Day1-2",
@@ -7060,7 +7252,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'pond'가 알맞습니다.",
           "koreanMeaning": "연못",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🪷",
+          "visualClueAlt": "연못 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U11-Q09",
@@ -7134,7 +7329,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ a map.",
           "sourceWord": "find",
           "sourceSheet": "Unit11_Day3-4",
@@ -7159,7 +7354,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'find'가 알맞습니다.",
           "koreanMeaning": "찾다",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🔎",
+          "visualClueAlt": "찾는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U11-Q12",
@@ -7232,7 +7430,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I ___ for treasure.",
           "sourceWord": "dig",
           "sourceSheet": "Unit11_Day3-4",
@@ -7257,7 +7455,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'dig'가 알맞습니다.",
           "koreanMeaning": "파다",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "⛏️",
+          "visualClueAlt": "땅을 파는 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U11-Q15",
@@ -7330,7 +7531,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "This bag is ___.",
           "sourceWord": "mine",
           "sourceSheet": "Unit11_Day3-4",
@@ -7355,7 +7556,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'mine'가 알맞습니다.",
           "koreanMeaning": "나의 것",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "🎒",
+          "visualClueAlt": "내 것 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U11-Q18",
@@ -7512,7 +7716,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I clap ___.",
           "sourceWord": "twice",
           "sourceSheet": "Unit12_Day1-2",
@@ -7537,7 +7741,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'twice'가 알맞습니다.",
           "koreanMeaning": "두 번",
-          "displayOrder": 2
+          "displayOrder": 2,
+          "visualClueEmoji": "2️⃣",
+          "visualClueAlt": "두 번 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U12-Q03",
@@ -7609,7 +7816,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I jump ___.",
           "sourceWord": "three times",
           "sourceSheet": "Unit12_Day1-2",
@@ -7634,7 +7841,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'three times'가 알맞습니다.",
           "koreanMeaning": "세 번",
-          "displayOrder": 5
+          "displayOrder": 5,
+          "visualClueEmoji": "3️⃣",
+          "visualClueAlt": "세 번 표시 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U12-Q06",
@@ -7706,7 +7916,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see ___ toys.",
           "sourceWord": "lots of",
           "sourceSheet": "Unit12_Day1-2",
@@ -7731,7 +7941,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'lots of'가 알맞습니다.",
           "koreanMeaning": "많은",
-          "displayOrder": 8
+          "displayOrder": 8,
+          "visualClueEmoji": "🧸🧸🧸",
+          "visualClueAlt": "많은 물건 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U12-Q09",
@@ -7803,7 +8016,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "I see a ___.",
           "sourceWord": "wall",
           "sourceSheet": "Unit12_Day3-4",
@@ -7828,7 +8041,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 0,
           "explanationKo": "문맥상 'wall'가 알맞습니다.",
           "koreanMeaning": "벽",
-          "displayOrder": 11
+          "displayOrder": 11,
+          "visualClueEmoji": "🧱",
+          "visualClueAlt": "벽 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U12-Q12",
@@ -7901,7 +8117,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "The wall can ___ ice.",
           "sourceWord": "be made of",
           "sourceSheet": "Unit12_Day3-4",
@@ -7926,7 +8142,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 1,
           "explanationKo": "문맥상 'be made of'가 알맞습니다.",
           "koreanMeaning": "~로 만들어지다",
-          "displayOrder": 14
+          "displayOrder": 14,
+          "visualClueEmoji": "🧱",
+          "visualClueAlt": "재료로 만들어진 모습 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U12-Q15",
@@ -7999,7 +8218,7 @@ export const quizBook: QuizBook = {
           "questionType": "빈칸완성형",
           "weakFocusTag": "보기 단어 형태 그대로 고르기",
           "difficulty": "medium",
-          "promptTitle": "빈칸에 들어갈 알맞은 단어를 고르세요.",
+          "promptTitle": "그림 단서를 보고 빈칸에 들어갈 알맞은 단어를 고르세요.",
           "question": "Ice can ___.",
           "sourceWord": "melt",
           "sourceSheet": "Unit12_Day3-4",
@@ -8024,7 +8243,10 @@ export const quizBook: QuizBook = {
           "answerIndex": 3,
           "explanationKo": "문맥상 'melt'가 알맞습니다.",
           "koreanMeaning": "녹다",
-          "displayOrder": 17
+          "displayOrder": 17,
+          "visualClueEmoji": "🧊💧",
+          "visualClueAlt": "녹는 얼음 그림",
+          "visualClueSource": "정답 단어 기반 시각 단서. 실제 시험지 이미지가 제공되면 question.imagePath로 교체 가능."
         },
         {
           "id": "U12-Q18",

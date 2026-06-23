@@ -64,6 +64,24 @@ export default function QuestionCard({ unit, question, current, total, selectedI
           </div>
         ) : question.section === "fill_blanks" ? (
           <div className="mt-3 rounded-3xl border border-sky-100 bg-sky-50 p-4">
+            <div className="mb-4 rounded-[1.5rem] border border-sky-200 bg-white p-4 text-center shadow-sm">
+              <p className="text-sm font-black text-sky-700">그림 단서</p>
+              {question.imagePath ? (
+                <img
+                  src={question.imagePath}
+                  alt={question.imageAlt ?? question.visualClueAlt ?? "빈칸완성 그림 단서"}
+                  className="mx-auto mt-3 max-h-48 w-full rounded-2xl object-contain"
+                />
+              ) : (
+                <div
+                  role="img"
+                  aria-label={question.visualClueAlt ?? "빈칸완성 그림 단서"}
+                  className="mt-3 text-7xl leading-none"
+                >
+                  {question.visualClueEmoji ?? "🖼️"}
+                </div>
+              )}
+            </div>
             <p className="text-2xl font-black leading-snug text-slate-900">{question.question}</p>
             {question.wordBank && <p className="mt-3 text-sm font-bold leading-relaxed text-slate-500">보기: {question.wordBank.join(" · ")}</p>}
           </div>
