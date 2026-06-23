@@ -23,3 +23,4 @@ npm run dev
 ## 배포
 
 GitHub 저장소에 압축 해제한 파일 전체를 업로드한 뒤 Vercel에서 배포합니다.
+Updated for latest Andy weekly test deployment.
